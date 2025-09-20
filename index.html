@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Irregular Verbs Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <h1 class="title">
+            <i class="fas fa-book-open"></i>
+            Interactive Irregular Verbs
+          </h1>
+          <p class="subtitle">Learn and practice English irregular verbs with pronunciation</p>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container">
+          <div class="controls">
+            <div class="search-box">
+              <i class="fas fa-search search-icon"></i>
+              <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search verbs..." 
+                class="search-input"
+              >
+              <button id="clearSearch" class="clear-btn" title="Clear search">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            
+            <div class="filter-controls">
+              <select id="filterSelect" class="filter-select">
+                <option value="all">All Verbs</option>
+                <option value="a-f">A-F</option>
+                <option value="g-l">G-L</option>
+                <option value="m-r">M-R</option>
+                <option value="s-z">S-Z</option>
+              </select>
+              
+              <button id="pronounceAll" class="pronounce-all-btn">
+                <i class="fas fa-volume-up"></i>
+                Practice Mode
+              </button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <div class="table-wrapper">
+              <table class="verbs-table">
+                <thead>
+                  <tr>
+                    <th class="verb-header">
+                      <i class="fas fa-play-circle"></i>
+                      Infinitive
+                    </th>
+                    <th class="verb-header">
+                      <i class="fas fa-play-circle"></i>
+                      Past Simple
+                    </th>
+                    <th class="verb-header">
+                      <i class="fas fa-play-circle"></i>
+                      Past Participle
+                    </th>
+                    <th class="meaning-header">
+                      <i class="fas fa-language"></i>
+                      Ma'nosi (O'zbekcha)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="verbsTableBody">
+                  <!-- Verbs will be inserted here by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat-card">
+              <i class="fas fa-list"></i>
+              <div>
+                <span class="stat-number" id="totalVerbs">0</span>
+                <span class="stat-label">Total Verbs</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <i class="fas fa-search"></i>
+              <div>
+                <span class="stat-number" id="filteredVerbs">0</span>
+                <span class="stat-label">Showing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
